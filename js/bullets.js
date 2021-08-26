@@ -9,7 +9,9 @@ class Bullet  {
             this.sizeCanvas = sizeCanvas 
             this.direction = direction
             this.imageBull = undefined 
+            this.bullSound = undefined
             this.init()
+            
         }
        
     
@@ -25,6 +27,8 @@ class Bullet  {
             this.imageBull = new Image()
             this.imageBull.pathImage = `img/bullets.png`
             this.imageBull.src = this.imageBull.pathImage
+            this.bullSound = new Audio(`mp3/sonido bala.mp3`)
+            this.bullSound.play()
     }
     
         draw() {

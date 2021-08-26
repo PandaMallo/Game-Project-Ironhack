@@ -6,5 +6,7 @@ const button=document.getElementById('start')
     document.getElementById('start').classList.add ('hidden')
     document.getElementById('hiddengame3').classList.add ('hidden')
     document.getElementById('myCanvas').classList.remove ('hidden') 
-    })
+    let picaSound = new Audio ('./mp3/pikachu_pi_pikachu.mp3')
+    picaSound.play()
+ })
 

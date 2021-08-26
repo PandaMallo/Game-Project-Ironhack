@@ -19,13 +19,12 @@ const Game = {
     score: 0,
     bonus: undefined,
     bonused: false,
-
     slowed: false,
     bullSound: undefined,
     gameSound: undefined, 
-
     imageLife : undefined,
     imageGameOver: undefined,
+    clear: undefined,
 
     init() {
         this.canvasDom = document.getElementById('myCanvas')
@@ -51,7 +50,6 @@ const Game = {
     },
 
     start(){
-        this.bullSound = new Audio(`mp3/sonido bala.mp3`)
         this.gameSound = new Audio(`mp3/cancion game.mp3`)
 
         this.gameSound.play()
@@ -59,7 +57,7 @@ const Game = {
         
         this.createEnemies()
         
-        setInterval(() => {
+        this.clear = setInterval(() => {
             let random = Math.floor(Math.random()* 3000)
             if (this.framesCounter >= random){
                 this.createEnemies()
@@ -102,7 +100,7 @@ const Game = {
                     break;
                 case this.keys.shoot:
                     this.player.shoot()
-                    this.bullSound.play()
+                    
                     break;
                 case this.keys.left:
                     this.player.moving = true
@@ -230,22 +228,21 @@ const Game = {
         }
     },
 
-    
-
-
     winGame() {
         this.imageWin = new Image()
         this.imageWin.pathImage = `img/you-win-8bit.gif`
         this.imageWin.src = this.imageWin.pathImage
-        if(this.score >= 500){
+        if(this.score >= 50){
             this.ctx.drawImage(
                 this.imageWin,
                 0,
                 0,
                 this.canvasSize.w,
                 this.canvasSize.h)
+                clearInterval(this.clear)
         }
     },
+
      gameOver() {
         this.imageGameOver = new Image()
         this.imageGameOver.pathImage = `img/image.png`
@@ -256,9 +253,11 @@ const Game = {
                 0,
                 0,
                 this.canvasSize.w,
-                this.canvasSize.h)
-            }
+                this.canvasSize.h
+            )
+            clearInterval(this.clear)
         }
+    }
 
 }
 
