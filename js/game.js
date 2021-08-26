@@ -232,7 +232,7 @@ const Game = {
         this.imageWin = new Image()
         this.imageWin.pathImage = `img/you-win-8bit.gif`
         this.imageWin.src = this.imageWin.pathImage
-        if(this.score >= 50){
+        if(this.score >= 500){
             this.ctx.drawImage(
                 this.imageWin,
                 0,
