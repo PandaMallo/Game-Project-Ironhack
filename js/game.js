@@ -90,7 +90,7 @@ const Game = {
         this.drawLife()
         this.bonus?.draw()
         this.winGame()
-       // this.gameOver()
+        this.gameOver()
         
     },
 
@@ -129,8 +129,8 @@ const Game = {
     },
 
     drawScore(){
-        this.ctx.font = '50px serif'
-        this.ctx.fillText(`Score : ${this.score}`,this.canvasSize.w /2 - 100,50,)
+        this.ctx.font = '50px joystix'
+        this.ctx.fillText(`Score : ${this.score}`,this.canvasSize.w /2 - 200,50,)
     },
 
     drawLife(){
@@ -193,7 +193,7 @@ const Game = {
              this.player.bullets.forEach((bul,j) => {
                 if (
                     bul.posX + bul.size >= ene.posX &&
-                    bul.posX < ene.posX + ene.size.w &&
+                    bul.posX < ene.posX + ene.size.w - 70 &&
                     bul.posY + bul.size >= ene.posY &&
                     bul.posY < ene.posY + ene.size.h
                 ){

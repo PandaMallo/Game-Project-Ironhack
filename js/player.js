@@ -87,8 +87,8 @@ class Player{
     
 
     shoot() {
-        this.bullets.push(new Bullet(this.ctx,this.posX, this.posY, this.canvasSize,this.direction))
-       
+        this.bullets.push(new Bullet(this.ctx,this.posX, this.posY, this.canvasSize,this.direction,))
+        
         
     }
 
