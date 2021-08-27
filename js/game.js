@@ -63,7 +63,7 @@ const Game = {
                 this.createEnemies()
                 this.framesCounter = 0
             } 
-            if(this.score >= 180 && !this.bonused){
+            if(this.score >= 80 && !this.bonused){
                 this.bonused = true
                 this.bonus = new Bonus(this.ctx, 0, 0, 'bonus.png',this.canvasSize, 60, 60 )
             }
@@ -222,7 +222,7 @@ const Game = {
     },
 
     bonusFx (){
-        if (this.score >= 200){
+        if (this.score >= 120){
             this.slowed = false;
             this.enemies.forEach(el => el.speed = el.initialSpeed)
         }
@@ -232,7 +232,7 @@ const Game = {
         this.imageWin = new Image()
         this.imageWin.pathImage = `img/you-win-8bit.gif`
         this.imageWin.src = this.imageWin.pathImage
-        if(this.score >= 500){
+        if(this.score >= 200 ){
             this.ctx.drawImage(
                 this.imageWin,
                 0,

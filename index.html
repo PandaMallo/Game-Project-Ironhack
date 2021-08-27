@@ -13,16 +13,37 @@
           margin: 0;
           padding: 0;
         }
-      </style>
+    </style>
     <h1 id="hiddengame1">KIll Pikachu</h1>
+
     <button id='start'>START</button>
-    <img id="hiddengame3" src="./img/dead_pica1.png" alt="Dead Pikachu">
+
+    
+    <div class="flex">
+      <div class="inline" >
+        <h2 id="hidden4">Game Instruction</h2>
+        <p id="hidden5">You must kill Pikachus. When you get the score up to 200 you win the first Level.
+        Be carefull, and don't forget to catch the bonus!!!!!
+        <br>
+        W = JUMP
+        <br>
+        A = MOVE LEFT
+        <br>
+        D = MOVE RIGHT
+        <br>
+        M = SHOOT
+        </p>
+      </div> 
+      <div>
+        <img id="hidden3" src="./img/dead_pica1.png" alt="dead pikachu">
+      </div>
+    </div>
+
     <div >
       <audio
       id="picaSaund" src="./mp3/pikachu_pi_pikachu.mp3" >
       </audio>
     </div>
-
 
     <canvas id="myCanvas" class="hidden"></canvas>
 
